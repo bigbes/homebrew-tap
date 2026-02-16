@@ -6,6 +6,7 @@ class LuaAmalgamateAT012 < Formula
     revision: "e89f7ec4db409192f755e08b3ff632e5547bff97"
   license "MIT"
   head "https://github.com/bigbes/lua-amalgamate.git", branch: "master"
+  revision 2
 
   depends_on "go" => :build
 
@@ -16,6 +17,8 @@ class LuaAmalgamateAT012 < Formula
     ldflags = "-s -w -X main.version=#{version} -X main.commit=#{build_commit} -X main.date=#{build_date}"
 
     system "go", "build", *std_go_args(ldflags: ldflags), "./cmd/lua-amalgamate"
+
+    bin.install_symlink "lua-amalgamate@0.1.2" => "lua-amalgamate"
   end
 
   test do

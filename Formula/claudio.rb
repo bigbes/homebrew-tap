@@ -18,9 +18,7 @@ class Claudio < Formula
 
     generate_completions_from_executable(
       bin/"claudio",
-      "completions",
-      shells:                 [:bash, :zsh],
-      shell_parameter_format: :arg,
+      "completion",
     )
   end
 

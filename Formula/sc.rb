@@ -16,7 +16,6 @@ class Sc < Formula
     generate_completions_from_executable(
       bin/"sc",
       "completion",
-      shells:                 [:bash, :zsh],
     )
   end
 

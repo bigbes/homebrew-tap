@@ -16,6 +16,13 @@ class BwServe < Formula
     )
   end
 
+  service do
+    run opt_bin/"bw-serve"
+    keep_alive true
+    log_path var/"log/bw-serve.log"
+    error_log_path var/"log/bw-serve.log"
+  end
+
   test do
     assert_match "bw-serve", shell_output("#{bin}/bw-serve version")
   end

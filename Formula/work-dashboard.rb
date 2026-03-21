@@ -1,10 +1,13 @@
 class WorkDashboard < Formula
   desc "Terminal UI work-dashboard"
   homepage "https://sourcecraft.dev/bigbes/work-dashboard/"
-  url "https://git.sourcecraft.dev/bigbes/work-dashboard.git",
+  url "ssh://ssh.sourcecraft.dev/bigbes/work-dashboard.git",
+    using:    :git,
     tag:      "v1.1.0",
-    revision: "f6089a69ce09e2286dc773fbafc19d94e97de317"
-  head "https://git.sourcecraft.dev/bigbes/work-dashboard.git", branch: "master"
+    revision: "3f2711c9dd104dc974256b136e7b364262567765"
+  head do
+    url "ssh://ssh.sourcecraft.dev/bigbes/work-dashboard.git", branch: "master", using: :git
+  end
 
   depends_on "go" => :build
   depends_on "just" => :build

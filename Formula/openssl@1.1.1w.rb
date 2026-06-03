@@ -44,6 +44,7 @@ class OpensslAT111w < Formula
       no-ssl3
       no-ssl3-method
       no-zlib
+      enable-ssl-trace
     ]
     on_linux do
       args += (ENV.cflags || "").split
